@@ -1,26 +1,17 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Message!</title>
+</head>
+<body>
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
+<p>You are sitting on the couch one Saturday afternoon when you receive a notification from headquarters.</p>
+<h3> ATTN: %%NAME%% </h3>
 
-function checkCookie() {
-    var user = getCookie("username");
-    if (user != "") {
-        alert("Welcome again " + user);
-    } else {
-        alert("Go to the introduction page."); // todo: fail gracefully
-    }
-}
-</script>
+<p>This message is intended for the person to whom it is addressed and may contain information that can affect the course of history. Please read with care.</p>
+
+<script src="cookies.js"/>
+<script>findAndReplaceName()</script>
+
+</body>
+</html>
