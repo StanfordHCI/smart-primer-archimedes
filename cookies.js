@@ -23,5 +23,5 @@ function checkCookie() {
 }
 
 function findAndReplaceName() {
-    document.body.innerHTML = document.body.innerHTML.str(/%%NAME%%/g, getCookie(name))
+    document.body.innerHTML = document.body.innerHTML.replace(/%%NAME%%/g, getCookie("name"))
 }
