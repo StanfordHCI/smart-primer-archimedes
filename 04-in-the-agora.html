@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>In the Agora</title>
+</head>
+<body>
+<p><i>The names are all funky...</i></p>
 <p>John stumbled as his feet landed on the cobbled floor of the agora. He quickly regained his balance and looked around to ensure that nobody noticed his sudden appearance, seemingly out of nowhere. But everyone's attention was focused on an argument across the vast marketplace, where a fishmonger and a confectioner were shouting at one another.</p>
 <p>	"He's done it! I tell you," the crotchety fishmonger shouted. "He's ruined the ceremony!"</p>
 <p>	Several of the onlookers shouted their agreement. John made his way over to the crowd. This argument was clearly related to his task and he thought he could, perhaps get more details so he might figure out exactly what he was to do.</p>
@@ -5,7 +12,7 @@
 <p>	"How could you be so na&iuml;ve? It was the money. The gold. He couldn't resist the chance to steal some wealth for himself."</p>
 <p>	The argument continued, until all of a sudden the entire agora went silent. A lone man walked across the agora and straight through the crowd. He didn't say a word, but the group parted as he passed, giving him a wide berth as he passed. And when he had turned the corner, the cluster still gathered dispersed. The argument was over.</p>
 <p>John was left standing where the crowd had been just moments before when the fishmonger called out to him, "Hey! Boy! What are you doing standing there? Looking to steal something?"</p>
-<p>"What? I...no. I'm just...," John had no real answer. He had a general goalto stop the turmoil in Syracuse--but he had no idea where to start.</p>
+<p>"What? I...no. I'm just...," John had no real answer. He had a general goal--to stop the turmoil in Syracuse--but he had no idea where to start.</p>
 <p>"You're just what? I see what your doing. And I'm telling you, you try to steal my fish and I'll have your hand," the fishmonger threatened.</p>
 <p>"You have no idea what you're talking about. Phileas here is my new assistant. He helps me keep inventory records. You know I'm bad with numbers," the confectioner said from behind the fishmonger, with a wink at John as he came up with a fake name. "Come on Phileas. I have some work for you."</p>
 <p>John had no choice but to follow the confectioner. It certainly seemed like a better option than staying behind with the accusatory fishmonger. Not to mention, the confectioner's stand was sure to smell better.</p>
@@ -34,12 +41,19 @@
 
 <button onclick="checkCandyCount()">Check</button>
 
-<p id="result"></p> <!--Make sure you can see it without scrolling more.-->
+<p id="result">Feedback appears here.</p> <!--Make sure you can see it without scrolling more.-->
 
 <script>
 function checkCandyCount() {
 	var el = document.getElementById("candyCount");
-    document.getElementById("result").innerHTML = "Got this:" + el.value;
+	var number = parseInt(el.value, 10);
+	var resultString = "Got this: " + number;
+	if (80 <= number && number <= 350) {
+		resultString += '<br>Correct! <a href="05-a-familiar-name.html">Continue</a>';
+	} else {
+		resultString += '<br>Try again...';
+	}
+    document.getElementById("result").innerHTML = resultString;
 }
 </script>
 
