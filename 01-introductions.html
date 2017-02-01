@@ -8,13 +8,26 @@
 
 <input id="name" type="text" name="fname" value=""/><br>
 
-<button onclick="putNameInCookie()">That's my name!</button>
+<p>Are you a boy or a girl?</p>
+<input type="radio" name="gender" value="boy">Boy<br>
+<input type="radio" name="gender" value="girl">Girl<br>
 
-<p id="response"></p>
+<button onclick="putDataInCookie()">Submit</button>
 
-<a href="02-message-for-you.html">Next</a>
+<p id="result">Submit your data to proceed...</p> 
 
 <script>
+function getRadioVal(radios) {
+    // loop through list of radio buttons
+    for (var i=0, len=radios.length; i<len; i++) {
+        if ( radios[i].checked ) { // radio checked?
+            val = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
+}
+
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -22,11 +35,23 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function putNameInCookie() {
+function putDataInCookie() {
     var name = document.getElementById("name").value;
-    if (name != "" && name != null) {
+    if (name !== "" && name !== null) {
         setCookie("name", name, 365);
     }
+    var radio = getRadioVal(document.getElementsByName("gender"))
+    if (radio === "boy") {
+    	setCookie("possessive", "his", 365);
+    	setCookie("subject_pronoun", "he", 365);
+    	setCookie("object_pronoun", "him", 365);
+    } else if (radio === "girl") {
+    	setCookie("possessive", "her", 365);
+    	setCookie("subject_pronoun", "she", 365);
+    	setCookie("object_pronoun", "her", 365);
+    }
+    // TODO: verify & inform user when some value isn't set.
+    document.getElementById("result").innerHTML = '<a href="02-message-for-you.html">Next</a>';
 }
 </script>
 

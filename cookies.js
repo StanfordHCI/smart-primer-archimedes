@@ -22,6 +22,19 @@ function checkCookie() {
     }
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function findAndReplaceName() {
-    document.body.innerHTML = document.body.innerHTML.replace(/%%NAME%%/g, getCookie("name"))
+    var possessive = getCookie("possessive");
+    var subject = getCookie("subject_pronoun");
+    document.body.innerHTML = document.body.innerHTML.replace(/%%NAME%%/g, getCookie("name"));
+    document.body.innerHTML = document.body.innerHTML.replace(/%%POS%%/g, possessive);
+    document.body.innerHTML = document.body.innerHTML.replace(/%%SUBPRO%%/g, subject);
+    document.body.innerHTML = document.body.innerHTML.replace(/%%OBJPRO%%/g, getCookie("object_pronoun"));
+
+    // capitals
+    document.body.innerHTML = document.body.innerHTML.replace(/%%POS_CAP%%/g, capitalizeFirstLetter(possessive));
+    document.body.innerHTML = document.body.innerHTML.replace(/%%SUBPRO_CAP%%/g, capitalizeFirstLetter(subject));
 }
