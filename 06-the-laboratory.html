@@ -39,12 +39,24 @@
 
 <p><i>Describe what you found and where you found it.</i></p>
 
-<textarea name="paragraph_text" cols="50" rows="10"></textarea>
+<textarea id="puzzleText" cols="50" rows="10"></textarea>
+<input type="button" onclick="submitAristippusPuzzle()"/>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
-<script src="cookies.js"></script>
+<script src="personalization.js"></script>
 <script>
 window.onload=findAndReplaceName;
 </script>
+
+<script>
+function submitAristippusPuzzle() {
+	var submission = document.getElementById("puzzleText").value;
+	var userID = firebase.auth().currentUser.uid;
+	firebase.database().ref('submissions/aristippus-puzzle/' + userID).set({
+		"text" : submission
+	});
+}
+</script>
+
 </body>
 </html>

@@ -36,7 +36,7 @@ function findAndReplaceName() {
                     replacement = replacements[i];
                     var regex = new RegExp(replacement[0], "g");
                     var func = replacement[1];
-                    console.log(replacement);
+                    //console.log(replacement);
                     currentHTML = currentHTML.replace(regex, func(value[replacement[2]]));
                 }
 
