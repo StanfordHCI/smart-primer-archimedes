@@ -35,12 +35,14 @@
 <p>"From what I gather, those are latitude and longitude coordinates for a specific place on a map. Latitude is a north/south location on the globe, where 0 degrees is the equator, and longitude is an east-west location, where 0 degrees is on the Prime Meridian, which runs through a town in England named Greenwich. Would you like to learn more about [latitude and longitude coordinates]?"</p>
 <p>"I believe the next line in Aristippus' puzzle is some description that might make sense when you get there, and the hint is there in case you are really having trouble. If you'd like, I can give you [directions to these coordinates.]"</p>
 <p>IMAGE HERE </p>
-<p>"Alright, when you've found what Aristippus has hidden would you write up a description of what it is and where you found it? I need to prove that his puzzle was solved. And one more thing: he sent the puzzle along with a message. He said that you're looking for a small, man-made object, no bigger than my head, and that he had a friend place it in it's spot."</p>
+<p>"Alright, when you've found what Aristippus has hidden would you write up a description of what it is and where you found it? I need to prove that his puzzle was solved. And one more thing: he sent the puzzle along with a message. He said that you're looking for a small, man-made object, no bigger than my head, and that he had a friend place it in its spot."</p>
 
 <p><i>Describe what you found and where you found it.</i></p>
 
 <textarea id="puzzleText" cols="50" rows="10"></textarea>
-<input type="button" onclick="submitAristippusPuzzle()"/>
+<input type="button" onclick="submitAristippusPuzzle()" value="Submit">
+
+<p id="result">Continue when submitted...</p>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
 <script src="personalization.js"></script>
@@ -55,6 +57,7 @@ function submitAristippusPuzzle() {
 	firebase.database().ref('submissions/aristippus-puzzle/' + userID).set({
 		"text" : submission
 	});
+	document.getElementById("result").innerHTML = '<a href="07-mass-and-volume">Next</a>';
 }
 </script>
 
