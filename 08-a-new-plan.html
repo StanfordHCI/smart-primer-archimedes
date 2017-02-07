@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A New Plan</title>
+</head>
+<body>
+
+<p>"Alright! Enter that last value into the table and we can take a look at our results."</p>
+<p>John scribbled the last number down and looked up at Archimedes.</p>
+<p>"Well," Archimedes prompted. "What do the results tell you?"</p>
+<p>%%NAME%% glanced at the paper. "The mass of the bottle changes a lot when you fill it with different materials. But you were right! The volume stays the same. And the volume matched the volume on the label."</p>
+<p>"Exactly! So objects of different material that are the same volume weigh different amounts. I think we can capture this relationship in something called density. Density is mass divided by volume (D = M / V). So basically what we are saying is that all materials have different densities. Therefore gold should have a different density than silver.</p>
+<p>"Now, I'm desperately in need of a bath, but I think with this knowledge we have enough information to solve the king's problem. Don't you? Will you write up a proposal for an experiment and bring it to me in the bath house just down the street when you are done?"</p>
+
+<p><i>How will you determine whether the crown is gold or not?</i></p>
+
+<textarea id="puzzleText" cols="50" rows="10"></textarea>
+<input type="button" onclick="submitArchimedesProcedure()" value="Submit">
+
+<p id="result">Continue when submitted...</p>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script src="personalization.js"></script>
+<script>
+window.onload=findAndReplaceName;
+</script>
+
+<script>
+function submitArchimedesProcedure() {
+	var submission = document.getElementById("puzzleText").value;
+	var userID = firebase.auth().currentUser.uid;
+	firebase.database().ref('submissions/archimedes-procedure/' + userID).set({
+		"text" : submission
+	});
+	document.getElementById("result").innerHTML = '<a href="09-eureka.html">Next</a>';
+}
+</script>
+
+</body>
+</html>
