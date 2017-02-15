@@ -39,13 +39,15 @@ function findAndReplaceName() {
                     //console.log(replacement);
                     currentHTML = currentHTML.replace(regex, func(value[replacement[2]]));
                 }
-
                 document.body.innerHTML = currentHTML;
+                document.body.hidden = false;
             });
         } else {
         // No user is signed in.
         }
+
     });
+    //document.body.hidden = false;
 
     
 }

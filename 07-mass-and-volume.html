@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mass and Volume</title>
+	  <title>Mass and Volume</title>
+    <link rel="stylesheet" href="spa_style.css">
 </head>
-<body>
+<body hidden="true">
 <p>"That's great. I'll let Aristippus know that once again, he has failed to stump me with a puzzle. Of course, I'll give you your due credit. Great job. I guess you've proven yourself a reliable helper for this whole crown ordeal.</p>
 <p>"Here's my idea. Objects take up a certain amount of space, which is their volume, and the weigh a certain amount, which is their mass.</p>
 <p>"I believe that objects that are the same size but are made up of different materials will have different weights. At the same time, I think objects that are the same weight but made up of different materials will take up a different amount of space. Does that make sense?"</p>
 <p> UNDERSTANDING CHECK </p>
 <p>	"Wonderful! Now I can't very well run tests on the golden crown. Hiero would be quite upset if I did. So, to test my idea I'm thinking we can take to objects of different materials and compare their masses and volumes. Do you think we could use that container you have?" Archimedes asked, pointing at a plastic water bottle in %%NAME%%'s hand.</p>
 <p>%%NAME%% agreed and set the bottle on only exposed corner of the table in front of %%OBJPRO%%.</p>
+<img src="20170214_155556.jpg" width="33%" align="left"/>
 <p>"Alright, so we can test this idea by filling the bottle first with air and then with dirt. We can find the mass of the bottle by weighing it. </p>
 <p>"We know the volume of the bottle isn't changing when we put different materials inside it. Look, it even says the volume on the label! But the crown doesn't come with a volume label. So I'd like to test an idea I have to use water displacement to measure volume as well.</p>
 <p>"I believe that if we put the bottle in a tub of water filled to the brim, the amount of water that overflows (the amount of water displaced) will equal the volume of the bottle, regardless of its mass. So the same amount of water should overflow when it is filled with air as when it is filled with dirt, and that amount of water should equal the volume labeled on the bottle. Are you following?"</p>
 <p>"Wonderful! Then let's get started. Would you grab a piece of paper from somewhere? I need you to copy down a chart to keep track of the data."</p>
 <!-- can you have the table slide downward from a left side column??-->
 <div style="width:600px"> 
-<div id="datatable" style="float:left;width:300px">
+<div id="datatable" style="float:left;width:180px">
 <p>Air Filled Bottle</p>
 <p>Mass (in grams): <input id="air-mass" type="text"></p>
 <p>Volume (in mL): <input id="air-volume" type="text"></p>
@@ -25,8 +27,8 @@
 <p>Volume (in mL): <input id="dirt-volume" type="text"></p>
 <input type="button" value="Save Measurements" onclick="saveMeasurements()">
 </div>
-<div id="procedure" style="float:right;width:300px">
-<p>	"Now let's start with the air filled container. Simply empty it of all its water Drink it; don't let water go to waste. We're in a drought, you know. And weigh the bottle."</p>
+<div id="procedure" style="float:right;width:420px">
+<p>	"Now let's start with the air filled container. Drink it; don't let water go to waste. We're in a drought, you know. And weigh the bottle."</p>
 <p>"You'll probably find it is too light to weigh, so we can estimate it at 12 grams, but if you could find a value, enter that into your chart."</p>
 <p>"We're now going to measure the volume of the bottle filled with air. First, fill a bowl big enough to hold the whole bottle to the brim with water. We want to see much water gets displaced, or flows over the brim. So place your bowl into a large flat basin, like a baking dish, that we can collect the water in.</p>
 <p>"When you have finished that, gently place the bottle into the bowl. Be careful not to splash. Collect the overflowing water in the flat basin. You may need to push the bottle down into the water until it is completely submerged. </p>
@@ -59,7 +61,7 @@ function colorScrolled() {
   } else {
     datatable.style.position = "fixed";
     datatable.style.top = "0px";
-    datatable.style.left = "8px";
+    //datatable.style.left = "8px";
   }
 }
 
