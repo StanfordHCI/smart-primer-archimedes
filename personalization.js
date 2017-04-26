@@ -41,6 +41,7 @@ function findAndReplaceName() {
                 }
                 document.body.innerHTML = currentHTML;
                 document.body.hidden = false;
+                expositionOnLoad();
             });
         } else {
         // No user is signed in.

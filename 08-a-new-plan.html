@@ -17,9 +17,8 @@
 <p><i>How will you determine whether the crown is gold or not?</i></p>
 
 <textarea id="puzzleText" cols="50" rows="10"></textarea>
-<input type="button" onclick="submitArchimedesProcedure()" value="Submit">
-
-<p id="result">Continue when submitted...</p>
+<br>
+<input type="button" onclick="submitArchimedesProcedure()" value="Save and Continue">
 
 <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
 <script src="personalization.js"></script>
@@ -34,7 +33,7 @@ function submitArchimedesProcedure() {
 	firebase.database().ref('submissions/archimedes-procedure/' + userID).set({
 		"text" : submission
 	});
-	document.getElementById("result").innerHTML = '<a href="09-eureka.html">Next</a>';
+	window.location.href = "09-eureka.html";
 }
 </script>
 

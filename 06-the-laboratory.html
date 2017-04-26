@@ -46,9 +46,8 @@
 <p><i>Describe what you found and where you found it.</i></p>
 
 <textarea id="puzzleText" cols="50" rows="10"></textarea>
-<input type="button" onclick="submitAristippusPuzzle()" value="Submit">
-
-<p id="result">Continue when submitted...</p>
+<br>
+<input type="button" onclick="submitAristippusPuzzle()" value="Save and Continue">
 
 <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
 <script src="personalization.js"></script>
@@ -63,7 +62,7 @@ function submitAristippusPuzzle() {
 	firebase.database().ref('submissions/aristippus-puzzle/' + userID).set({
 		"text" : submission
 	});
-	document.getElementById("result").innerHTML = '<a href="07-mass-and-volume.html">Next</a>';
+	window.location.href = '07-mass-and-volume.html';
 }
 </script>
 
