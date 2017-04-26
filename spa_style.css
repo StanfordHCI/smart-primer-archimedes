@@ -5,6 +5,20 @@ body {
 	font-family: 'Trebuchet MS', Verdana, Arial, serif;
 }
 
+body.exposition {
+	width: 250px;
+	background: #fff;
+	padding: 25px;
+}
+
+body.exposition p {
+	margin: 0px
+}
+
 figcaption {
 	font-size: 10px;
+}
+
+a.exposition {
+	color: #666;
 }

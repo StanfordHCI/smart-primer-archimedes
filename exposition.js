@@ -1,3 +1,7 @@
+function resizeIframe(iframe) {
+	iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+}
+
 function expositionOnLoad() {
 	$(".exposition").mouseenter( function (eventObject) {
 		var target = $(eventObject.target);
@@ -5,9 +9,11 @@ function expositionOnLoad() {
 		$('<iframe>', {
 			src: target.attr("data-link"),
 			id: target.attr("data-link"),
-			frameborder: 1,
-			scrolling: 'yes',
-			style: "position: fixed; border: 2px solid red"
+			width: 300,
+			scrolling: 'no',
+			style: "position: absolute; box-shadow: 5px 5px 15px #888888; " + 
+				"border: 0px solid black;",
+			onload: "resizeIframe(this)"
 		}).appendTo(target);
 	}).mouseleave( function (eventObject) {
 		$("iframe").remove();
